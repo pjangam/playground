@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assemblies>
+  <assembly name="Mocha Tests" time="0.16200000000000003" total="15" failed="0" passed="15" skipped="0" run-date="2021-01-21" run-time="10:03:10">
+    <collection name="Root Suite" total="0" failed="0" passed="0" time="0" skipped="0">
+    </collection>
+    <collection name="application api" total="3" failed="0" passed="3" time="0.068" skipped="0">
+      <test name="application api when called with valid id should return application" time="0.037" result="Pass">
+      </test>
+      <test name="application api given valid application when note added to it then should save it" time="0.024" result="Pass">
+      </test>
+      <test name="application api given application has notes when get notes called then should return it" time="0.007" result="Pass">
+      </test>
+    </collection>
+    <collection name="review_queue" total="2" failed="0" passed="2" time="0.012" skipped="0">
+      <test name="application api review_queue get review queue should return valid result" time="0.007" result="Pass">
+      </test>
+      <test name="application api review_queue when upstream errors returns 500" time="0.005" result="Pass">
+      </test>
+    </collection>
+    <collection name="upload document" total="2" failed="0" passed="2" time="0.033" skipped="0">
+      <test name="application api upload document should upload document and not keep local file" time="0.025" result="Pass">
+      </test>
+      <test name="application api upload document should get uploaded documents on get documents" time="0.008" result="Pass">
+      </test>
+    </collection>
+    <collection name="whitelist api" total="0" failed="0" passed="0" time="0" skipped="0">
+    </collection>
+    <collection name="get" total="4" failed="0" passed="4" time="0.018" skipped="0">
+      <test name="whitelist api get when called without id should return all items" time="0.006" result="Pass">
+      </test>
+      <test name="whitelist api get when called with id should return one item" time="0.006" result="Pass">
+      </test>
+      <test name="whitelist api get when upstream errors returns 500" time="0.003" result="Pass">
+      </test>
+      <test name="whitelist api get with key when upstream errors returns 500" time="0.003" result="Pass">
+      </test>
+    </collection>
+    <collection name="post" total="2" failed="0" passed="2" time="0.017" skipped="0">
+      <test name="whitelist api post when called with valid data should create one item" time="0.006" result="Pass">
+      </test>
+      <test name="whitelist api post with key when upstream errors returns 500" time="0.011" result="Pass">
+      </test>
+    </collection>
+    <collection name="delete" total="2" failed="0" passed="2" time="0.013999999999999999" skipped="0">
+      <test name="whitelist api delete when called with valid data should create one item" time="0.005" result="Pass">
+      </test>
+      <test name="whitelist api delete with key when upstream errors returns 500" time="0.009" result="Pass">
+      </test>
+    </collection>
+  </assembly>
+</assemblies>
