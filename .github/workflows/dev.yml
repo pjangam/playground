@@ -23,6 +23,19 @@ jobs:
     - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
+  report:
+    runs-on: ubuntu-18.04
+    name: Generate Test Reports
+    steps:
+      - name: XUnit Viewer
+        id: xunit-viewer
+        uses: AutoModality/action-xunit-viewer@v1  
+      - name: Attach the report
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-results.xml
+          path: test-results.xml
+
   test-defaults:
     runs-on: ubuntu-18.04
     name: Default version uses timestamps and package can be installed
