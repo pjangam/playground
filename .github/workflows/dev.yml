@@ -23,6 +23,19 @@ jobs:
     - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
+  othereport:
+    runs-on: ubuntu-18.04
+    name: Generate junit Reports
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls 
+    
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.7
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: test-results.xml
   report:
     runs-on: ubuntu-18.04
     name: Generate Test Reports
