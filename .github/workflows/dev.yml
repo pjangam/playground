@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-18.04
     name: Generate Test Reports
     steps:
+      - uses: actions/checkout@v2
+      - run: ls 
       - name: XUnit Viewer
         id: xunit-viewer
         uses: AutoModality/action-xunit-viewer@v1  
