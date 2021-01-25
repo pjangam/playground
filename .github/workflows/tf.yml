@@ -1,4 +1,4 @@
-name: Update BFF
+name: terrafor apply
 
 on:
   workflow_dispatch:
