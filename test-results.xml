@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.1730" tests="15" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-01-21T09:44:42" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="application api" timestamp="2021-01-21T09:44:42" tests="3" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0730" failures="0">
+    <testcase name="application api when called with valid id should return application" time="0.0400" classname="when called with valid id should return application">
+    </testcase>
+    <testcase name="application api given valid application when note added to it then should save it" time="0.0260" classname="given valid application when note added to it then should save it">
+    </testcase>
+    <testcase name="application api given application has notes when get notes called then should return it" time="0.0070" classname="given application has notes when get notes called then should return it">
+    </testcase>
+  </testsuite>
+  <testsuite name="review_queue" timestamp="2021-01-21T09:44:43" tests="2" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0130" failures="0">
+    <testcase name="application api review_queue get review queue should return valid result" time="0.0070" classname="get review queue should return valid result">
+    </testcase>
+    <testcase name="application api review_queue when upstream errors returns 500" time="0.0060" classname="when upstream errors returns 500">
+    </testcase>
+  </testsuite>
+  <testsuite name="upload document" timestamp="2021-01-21T09:44:43" tests="2" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0350" failures="0">
+    <testcase name="application api upload document should upload document and not keep local file" time="0.0260" classname="should upload document and not keep local file">
+    </testcase>
+    <testcase name="application api upload document should get uploaded documents on get documents" time="0.0090" classname="should get uploaded documents on get documents">
+    </testcase>
+  </testsuite>
+  <testsuite name="whitelist api" timestamp="2021-01-21T09:44:43" tests="0" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="get" timestamp="2021-01-21T09:44:43" tests="4" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0260" failures="0">
+    <testcase name="whitelist api get when called without id should return all items" time="0.0060" classname="when called without id should return all items">
+    </testcase>
+    <testcase name="whitelist api get when called with id should return one item" time="0.0060" classname="when called with id should return one item">
+    </testcase>
+    <testcase name="whitelist api get when upstream errors returns 500" time="0.0030" classname="when upstream errors returns 500">
+    </testcase>
+    <testcase name="whitelist api get with key when upstream errors returns 500" time="0.0110" classname="with key when upstream errors returns 500">
+    </testcase>
+  </testsuite>
+  <testsuite name="post" timestamp="2021-01-21T09:44:43" tests="2" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0120" failures="0">
+    <testcase name="whitelist api post when called with valid data should create one item" time="0.0070" classname="when called with valid data should create one item">
+    </testcase>
+    <testcase name="whitelist api post with key when upstream errors returns 500" time="0.0050" classname="with key when upstream errors returns 500">
+    </testcase>
+  </testsuite>
+  <testsuite name="delete" timestamp="2021-01-21T09:44:43" tests="2" file="/Users/pramodjangam/code/origination/admin-portal-bff/test/api.test.ts" time="0.0140" failures="0">
+    <testcase name="whitelist api delete when called with valid data should create one item" time="0.0080" classname="when called with valid data should create one item">
+    </testcase>
+    <testcase name="whitelist api delete with key when upstream errors returns 500" time="0.0060" classname="with key when upstream errors returns 500">
+    </testcase>
+  </testsuite>
+</testsuites>
