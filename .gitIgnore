@@ -1,3 +1,4 @@
 .terraform
 tfplan
 .terraform*
+nodejs-demo/test-results.xml

@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-demo",
+  "version": "1.0.0",
+  "description": "dummy project for playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test --reporter=mocha-junit-reporter",
+    "cover": "npx nyc@latest --reporter=lcov npm run test"
+  },
+  "author": "Pramod Jangam",
+  "license": "MIT",
+  "dependencies": {
+    "expect": "^26.6.2",
+    "mocha": "^8.2.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "nyc": "^15.1.0"
+  }
+}
