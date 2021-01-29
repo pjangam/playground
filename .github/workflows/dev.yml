@@ -1,4 +1,4 @@
-name: Update BFF
+name: test
 
 on:
   workflow_dispatch:
@@ -41,20 +41,20 @@ jobs:
     name: Generate Test Reports
     steps:
       - uses: actions/checkout@v2
-      - run: ls 
+      - run: cd nodejs-demo && make cover 
       - name: XUnit Viewer
         id: xunit-viewer
         uses: AutoModality/action-xunit-viewer@v1  
       - name: Attach the report
         uses: actions/upload-artifact@v1
         with:
-          name: test-results.xml
-          path: test-results.xml
+          name: nodejs-demo/test-results.xml
+          path: nodejs-demo/test-results.xml
           result: test-results.xml
       - name: Copy test execution videos
         run: |
           mkdir public
-          cp test-results.xml public/
+          cp nodejs-demo/coverage/lcov-report public/
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         with:
