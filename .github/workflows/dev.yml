@@ -44,13 +44,7 @@ jobs:
       - run: cd nodejs-demo && make build cover 
       - name: XUnit Viewer
         id: xunit-viewer
-        uses: AutoModality/action-xunit-viewer@v1  
-      - name: Attach the report
-        uses: actions/upload-artifact@v1
-        with:
-          name: nodejs-demo/test-results.xml
-          path: nodejs-demo/test-results.xml
-          result: test-results.xml
+        uses: AutoModality/action-xunit-viewer@v1
       - name: Copy test execution videos
         run: |
           mkdir public
