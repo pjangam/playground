@@ -49,6 +49,7 @@ jobs:
         run: |
           mkdir public
           cp -r nodejs-demo/coverage/lcov-report public/
+          ls public
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1.7
         if: always()
