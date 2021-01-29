@@ -41,7 +41,7 @@ jobs:
     name: Generate Test Reports
     steps:
       - uses: actions/checkout@v2
-      - run: cd nodejs-demo && make cover 
+      - run: cd nodejs-demo && make build cover 
       - name: XUnit Viewer
         id: xunit-viewer
         uses: AutoModality/action-xunit-viewer@v1  
@@ -55,6 +55,12 @@ jobs:
         run: |
           mkdir public
           cp nodejs-demo/coverage/lcov-report public/
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.7
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: nodejs-demo/test-results.xml
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         with:
