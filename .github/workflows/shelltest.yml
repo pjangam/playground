@@ -9,9 +9,10 @@ jobs:
   test_shell:
     runs-on: ubuntu-latest
     steps:
-      - name: is var set
-        run: |
-          if [ -z ${{ clientname+x }} ];
-          then echo "var is unset";
-          else echo "var is set to '$var'";
-          fi
+     
+    - uses: haya14busa/action-cond@v1
+      id: condval
+      with:
+        cond: ${{ github.event.inputs.clientname != '' }}
+        if_true: "client name is set ${{ github.event.inputs.clientname}}"
+        if_false: "not set"
