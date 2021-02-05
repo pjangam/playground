@@ -1,1 +1,17 @@
-test
+name: shell test
+on:
+  workflow_dispatch:
+    inputs:
+      clientname:
+        description: 'client name'
+        required: true
+jobs:
+  test_shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: is var set
+        run: |
+          if [ -z ${clientname+x} ];
+          then echo "var is unset";
+          else echo "var is set to '$var'";
+          fi
