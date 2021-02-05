@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: is var set
         run: |
-          if [ -z ${clientname+x} ];
+          if [ -z ${{ clientname+x }} ];
           then echo "var is unset";
           else echo "var is set to '$var'";
           fi
