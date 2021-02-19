@@ -16,3 +16,5 @@ jobs:
         cond: ${{ github.event.inputs.clientname != '' }}
         if_true: echo "client name is set ${{ github.event.inputs.clientname}}"
         if_false: echo "not set"
+    - run: |
+       uuidgen
