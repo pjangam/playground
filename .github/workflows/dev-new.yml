@@ -39,31 +39,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: test-results.xml
-  report:
-    runs-on: ubuntu-18.04
-    name: Generate Test Reports
-    steps:
-      - uses: actions/checkout@v2
-      - run: cd nodejs-demo && make build cover 
-      - name: XUnit Viewer
-        id: xunit-viewer
-        uses: AutoModality/action-xunit-viewer@v1
-      - name: Copy test execution videos
-        run: |
-          mkdir public
-          cp -r nodejs-demo/coverage/lcov-report/* public/
-          ls public
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1.7
-        if: always()
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: nodejs-demo/test-results.xml
-      - name: Deploy report page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com' 
+  
 
