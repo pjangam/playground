@@ -23,4 +23,6 @@ jobs:
         aws-region: us-east-1
     - run: |
         cd terraform
+        terraform --version >version.txt
+        cat version.txt
         make deploy
