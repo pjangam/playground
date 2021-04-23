@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 0.12.25
+    
     - uses: haya14busa/action-cond@v1
       id: condval
       with:
@@ -17,4 +21,5 @@ jobs:
         if_true: echo "client name is set ${{ github.event.inputs.clientname}}"
         if_false: echo "not set"
     - run: |
-       uuidgen
+       uuidgen /
+       terraform --version
