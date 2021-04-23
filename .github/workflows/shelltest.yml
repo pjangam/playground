@@ -12,7 +12,7 @@ jobs:
      
     - uses: hashicorp/setup-terraform@v1
       with:
-        terraform_version: 0.12.25
+        terraform_version: 0.14.10
     
     - uses: haya14busa/action-cond@v1
       id: condval
@@ -23,3 +23,4 @@ jobs:
     - run: |
        uuidgen /
        terraform --version
+       echo -n 'dev_endpoint = '
