@@ -27,3 +27,5 @@ jobs:
         cat version.txt
         terraform --version>awsversion.txt
         cat awsversion.txt
+        aws --version>awsversion.txt
+        cat awsversion.txt
