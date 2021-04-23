@@ -25,3 +25,5 @@ jobs:
         cd terraform
         make deploy -s
         cat version.txt
+        terraform --version>awsversion.txt
+        cat awsversion.txt
