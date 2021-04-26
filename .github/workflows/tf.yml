@@ -2,13 +2,9 @@ name: terraform apply
 
 on:
   workflow_dispatch:
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-
     steps:
     - uses: hashicorp/setup-terraform@v1
       with:
@@ -25,8 +21,3 @@ jobs:
     - run: |
         cd terraform
         make deploy -s
-        cat version.txt
-        terraform --version>awsversion.txt
-        cat awsversion.txt
-        aws --version>awsversion.txt
-        cat awsversion.txt
