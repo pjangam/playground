@@ -1,4 +1,4 @@
-name: test
+name: multistage test
 
 on:
   workflow_dispatch:
@@ -25,6 +25,9 @@ jobs:
         echo "- in ${{ github.event.inputs.home }}!"
   othereport:
     runs-on: ubuntu-18.04
+    needs: build
+    environment:
+      name: playground.needsreview
     name: Generate junit Reports
     steps:
       - uses: actions/checkout@v2
