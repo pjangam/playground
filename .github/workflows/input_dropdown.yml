@@ -1,4 +1,4 @@
-name: Add new client
+name: Test dropdown
 
 on:
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
         run: |
             git checkout -b ${{ github.event.inputs.jiraid }}
             echo ${{ github.event.inputs.type }}
-            echo ${{ INPUT_type }}
+            echo $INPUT_type
             if ${{ github.event.inputs.type }} == 'blue';
             then
             echo "you selected blue"
