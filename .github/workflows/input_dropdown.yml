@@ -26,8 +26,8 @@ jobs:
             echo $INPUT_type
             if ${{ github.event.inputs.type }} == 'blue';
             then
-              echo "you selected blue"
-            else
               echo "you selected red"
+            else
+              echo "you selected blue"
             fi
             
