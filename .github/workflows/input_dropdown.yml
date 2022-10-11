@@ -8,9 +8,9 @@ on:
         required: true
         description: idv or doc upload, IDV is for instance issuance doc upload for others
         options: 
-        - 'blue'
-        - 'green'
-        - 'red'
+        - blue
+        - green
+        - red
 
 
 jobs:
@@ -24,10 +24,14 @@ jobs:
             echo ${{ github.event.inputs.type }}
             echo "from INPUT_ with double dollar"
             echo $INPUT_type
-            if ${{ github.event.inputs.type }} == 'blue'
+            if ${{ github.event.inputs.type }} == 'blue';
             then
               echo "you selected red"
             else
               echo "you selected blue"
             fi
+
+            [ "${{ github.event.inputs.type }}" == blue ] && echo "you selected in and and blue"
+            [ "${{ github.event.inputs.type }}" == red ] && echo "you selected in and and red"
+            [ "${{ github.event.inputs.type }}" == green ] && echo "you selected in and and green"
             
