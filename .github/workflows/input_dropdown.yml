@@ -1,0 +1,38 @@
+name: Add new client
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        type: choice
+        required: true
+        description: idv or doc upload, IDV is for instance issuance doc upload for others
+        options: 
+        - blue
+        - red
+
+
+jobs:
+  add_client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.5.1
+        with:
+          # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+          java-version: 18
+          # Java distribution. See the list of supported distributions in README file
+          distribution: corretto
+      - uses: actions/checkout@v2
+      - name: create new digram
+        run: |
+            git checkout -b ${{ github.event.inputs.jiraid }}
+            echo ${{ github.event.inputs.type }}
+            echo ${{ INPUT_type }}
+            if ${{ github.event.inputs.type }} == 'blue';
+            then
+            echo "you selected blue"
+            else
+            echo "you selected red"
+            fi
+            
