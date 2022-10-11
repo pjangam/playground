@@ -22,8 +22,6 @@ jobs:
         run: |
             echo "from gh"
             echo ${{ github.event.inputs.type }}
-            echo "from INPUT_"
-            echo $INPUT_type
             echo "from INPUT_ with double dollar"
             echo $$INPUT_type
             if ${{ github.event.inputs.type }} == 'blue';
