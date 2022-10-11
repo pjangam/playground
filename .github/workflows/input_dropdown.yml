@@ -33,5 +33,5 @@ jobs:
 
             [ "${{ github.event.inputs.type }}" == blue ] && echo "you selected in and and blue"
             [ "${{ github.event.inputs.type }}" == red ] && echo "you selected in and and red"
-            [ "${{ github.event.inputs.type }}" == green ] && echo "you selected in and and green"
+            [ "${{ github.event.inputs.type }}" == green ] && echo "you selected in and and green" || 0
             
