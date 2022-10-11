@@ -9,6 +9,7 @@ on:
         description: idv or doc upload, IDV is for instance issuance doc upload for others
         options: 
         - blue
+        - green
         - red
 
 
@@ -17,11 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: create new digram
+      - name: print color from iput
         run: |
+            echo "from gh"
             echo ${{ github.event.inputs.type }}
+            echo "from INPUT_"
             echo $INPUT_type
+            echo "from INPUT_ with double dollar"
+            echo $$INPUT_type
             if ${{ github.event.inputs.type }} == 'blue';
+            then
+            echo "you selected blue"
+            else
+            echo "you selected red"
+            fi
+            echo "now with INPUT_"
+            if ${{ INPUT_type }} == 'blue';
             then
             echo "you selected blue"
             else
