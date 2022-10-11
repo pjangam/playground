@@ -23,15 +23,8 @@ jobs:
             echo "from gh"
             echo ${{ github.event.inputs.type }}
             echo "from INPUT_ with double dollar"
-            echo $$INPUT_type
+            echo $INPUT_type
             if ${{ github.event.inputs.type }} == 'blue';
-            then
-            echo "you selected blue"
-            else
-            echo "you selected red"
-            fi
-            echo "now with INPUT_"
-            if ${{ INPUT_type }} == 'blue';
             then
             echo "you selected blue"
             else
