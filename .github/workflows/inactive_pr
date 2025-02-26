@@ -1,0 +1,19 @@
+name: "Send reviewer reminder"
+on:
+  schedule:
+    # Run every hour
+    - cron: "0 * * * *"
+
+jobs:
+  review-reminder:
+    permissions:
+      pull-requests: write
+    if: github.repository == 'Sojusan/github-action-reminder'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sojusan/github-action-reminder@v1
+        with:
+          reminder_message: "Optional reminder message"
+          inactivity_deadline_hours: 1
+          default_users_to_notify: |
+            @pjangam
