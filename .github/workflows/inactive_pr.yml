@@ -2,7 +2,7 @@ name: "Send reviewer reminder"
 on:
   schedule:
     # Run every hour
-    - cron: "0 * * * *"
+    - cron: "23 * * * *"
 
 jobs:
   review-reminder:
