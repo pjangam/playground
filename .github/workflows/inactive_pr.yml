@@ -2,7 +2,7 @@ name: "Send reviewer reminder"
 on:
   schedule:
     # Run every hour
-    - cron: "45 * * * *"
+    - cron: "45 1 * * *"
 
 jobs:
   review-reminder:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: sojusan/github-action-reminder@v1
         with:
-          reminder_message: "Optional reminder message"
+          reminder_message: "Please close this PR it is pending for long time"
           inactivity_deadline_hours: 1
           default_users_to_notify: |
             @pjangam
