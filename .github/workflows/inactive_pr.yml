@@ -2,13 +2,13 @@ name: "Send reviewer reminder"
 on:
   schedule:
     # Run every hour
-    - cron: "0 0 1 * *"
+    - cron: "45 * * * *"
 
 jobs:
   review-reminder:
     permissions:
       pull-requests: write
-    if: github.repository == 'Sojusan/github-action-reminder'
+    if: github.repository == 'pjangam/playground'
     runs-on: ubuntu-latest
     steps:
       - uses: sojusan/github-action-reminder@v1
